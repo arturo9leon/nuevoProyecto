@@ -1,18 +1,20 @@
 .home-layout {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 214px 1fr;
-  background: #f4f6f8;
+  grid-template-columns: 272px 1fr;
+  background: #edf3ef;
 }
 
 .content-area {
   min-width: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #f7fbf8;
 }
 
 @media (max-width: 1024px) {
   .home-layout {
-    grid-template-columns: 86px 1fr;
+    grid-template-columns: 84px 1fr;
   }
 }

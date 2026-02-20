@@ -1,12 +1,12 @@
 .topbar {
-  height: 58px;
+  min-height: 68px;
   background: linear-gradient(90deg, #67d5ff 0%, #38bdf8 100%);
   border-bottom: 1px solid #9adfff;
-  padding: 0 16px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 12px;
   box-sizing: border-box;
 }
 
@@ -20,10 +20,10 @@
 .icon {
   border: 1px solid #9fdffc;
   background: #ffffff;
-  color: #475569;
+  color: #334155;
   border-radius: 8px;
   font-size: 13px;
-  height: 34px;
+  height: 36px;
   padding: 0 10px;
   cursor: pointer;
 }
@@ -55,8 +55,8 @@
 }
 
 .avatar {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
   color: #ffffff;
@@ -64,4 +64,15 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .topbar {
+    padding: 10px 12px;
+  }
+
+  .name,
+  .role {
+    display: none;
+  }
 }
