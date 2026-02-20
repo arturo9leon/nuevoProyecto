@@ -1,0 +1,67 @@
+.topbar {
+  height: 58px;
+  background: linear-gradient(90deg, #67d5ff 0%, #38bdf8 100%);
+  border-bottom: 1px solid #9adfff;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control,
+.icon {
+  border: 1px solid #9fdffc;
+  background: #ffffff;
+  color: #475569;
+  border-radius: 8px;
+  font-size: 13px;
+  height: 34px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 34px;
+  padding: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: right;
+}
+
+.role {
+  margin: 2px 0 0;
+  color: #e0f2fe;
+  font-size: 12px;
+  text-align: right;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}

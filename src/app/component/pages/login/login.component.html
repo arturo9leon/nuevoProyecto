@@ -1,0 +1,46 @@
+<main class="auth-layout">
+  <section class="left-panel">
+    <div class="top-controls">
+      <button type="button"><span>🇵🇪</span> País</button>
+      <button type="button"><span>🌐</span> Idioma</button>
+      <button type="button"><span>🌙</span> Nocturno</button>
+    </div>
+
+    <div class="auth-page">
+      <section class="brand-block">
+        <div class="brand-logo" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span
+          ><span></span>
+        </div>
+        <h2>eSUPPLIER Portal</h2>
+        <p>Portal de Business Partners</p>
+      </section>
+
+      <section class="login-card">
+        <h1>Iniciar sesión</h1>
+        <p>Ingresa tu RUC para acceder</p>
+
+        <form class="login-form" action="#">
+          <label class="field-label" for="ruc">RUC *</label>
+          <div class="field-wrap">
+            <span class="field-icon">👤</span>
+            <input id="ruc" type="text" placeholder="RUC" />
+          </div>
+
+          <label class="field-label" for="password">Contraseña *</label>
+          <div class="field-wrap">
+            <span class="field-icon">🔒</span>
+            <input id="password" type="password" placeholder="********" />
+            <span class="field-icon">👁️</span>
+          </div>
+
+          <button class="submit-button" type="button" routerLink="/home">
+            Iniciar sesión
+          </button>
+        </form>
+      </section>
+    </div>
+  </section>
+
+  <section class="right-panel" aria-hidden="true"></section>
+</main>

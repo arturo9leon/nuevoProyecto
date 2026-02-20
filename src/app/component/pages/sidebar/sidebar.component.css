@@ -1,0 +1,78 @@
+.sidebar {
+  height: 100vh;
+  background: linear-gradient(180deg, #67d5ff 0%, #38bdf8 100%);
+  color: #e0f2fe;
+  padding: 14px 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #8edfff;
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin: 8px 6px;
+}
+
+.section-title.second {
+  margin-top: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #f0f9ff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 11px 14px;
+  border-radius: 12px;
+}
+
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.help-button {
+  margin-top: auto;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-radius: 12px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    font-size: 23px;
+  }
+
+  .menu-item {
+    font-size: 0;
+    padding: 11px;
+  }
+
+  .section-title,
+  .help-button {
+    display: none;
+  }
+}
