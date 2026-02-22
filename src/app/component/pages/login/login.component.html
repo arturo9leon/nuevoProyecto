@@ -1,9 +1,11 @@
 <main class="auth-layout">
   <section class="left-panel">
     <div class="top-controls">
-      <button type="button"><span>🇵🇪</span> País</button>
-      <button type="button"><span>🌐</span> Idioma</button>
-      <button type="button"><span>🌙</span> Nocturno</button>
+      @for (control of topControls; track control.label) {
+        <button type="button">
+          <span>{{ control.icon }}</span> {{ control.label }}
+        </button>
+      }
     </div>
 
     <div class="auth-page">
@@ -12,30 +14,38 @@
           <span></span><span></span><span></span><span></span><span></span
           ><span></span>
         </div>
-        <h2>eSUPPLIER Portal</h2>
-        <p>Portal de Business Partners</p>
+        <h2>{{ brand.title }}</h2>
+        <p>{{ brand.subtitle }}</p>
       </section>
 
       <section class="login-card">
-        <h1>Iniciar sesión</h1>
-        <p>Ingresa tu RUC para acceder</p>
+        <h1>{{ formMeta.title }}</h1>
+        <p>{{ formMeta.subtitle }}</p>
 
         <form class="login-form" action="#">
-          <label class="field-label" for="ruc">RUC *</label>
-          <div class="field-wrap">
-            <span class="field-icon">👤</span>
-            <input id="ruc" type="text" placeholder="RUC" />
-          </div>
+          @for (field of fields; track field.id) {
+            <label class="field-label" [for]="field.id">{{
+              field.label
+            }}</label>
+            <div class="field-wrap">
+              <span class="field-icon">{{ field.leadingIcon }}</span>
+              <input
+                [id]="field.id"
+                [type]="field.type"
+                [placeholder]="field.placeholder"
+              />
+              @if (field.trailingIcon) {
+                <span class="field-icon">{{ field.trailingIcon }}</span>
+              }
+            </div>
+          }
 
-          <label class="field-label" for="password">Contraseña *</label>
-          <div class="field-wrap">
-            <span class="field-icon">🔒</span>
-            <input id="password" type="password" placeholder="********" />
-            <span class="field-icon">👁️</span>
-          </div>
-
-          <button class="submit-button" type="button" routerLink="/home">
-            Iniciar sesión
+          <button
+            class="submit-button"
+            type="button"
+            [routerLink]="formMeta.submitRoute"
+          >
+            {{ formMeta.submitText }}
           </button>
         </form>
       </section>

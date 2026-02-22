@@ -2,126 +2,47 @@
   <h1 class="title">Panel de control</h1>
 
   <section class="stats-grid">
-    <article class="kpi-card">
-      <div class="kpi-head">
-        <p class="kpi-label">Órdenes de compra</p>
-        <span class="kpi-icon green">🛒</span>
-      </div>
-      <p class="kpi-value green">35</p>
-      <p class="kpi-sub">21 pendientes</p>
-      <p class="kpi-trend positive">↗ +12% este mes</p>
-    </article>
-
-    <article class="kpi-card">
-      <div class="kpi-head">
-        <p class="kpi-label">Valor contratado</p>
-        <span class="kpi-icon green">↗</span>
-      </div>
-      <p class="kpi-value green">S/ 21,770,115.50</p>
-      <p class="kpi-sub">Este mes</p>
-      <p class="kpi-trend positive">↗ +8% este mes</p>
-    </article>
-
-    <article class="kpi-card">
-      <div class="kpi-head">
-        <p class="kpi-label">Entregas MIGO</p>
-        <span class="kpi-icon amber">🚚</span>
-      </div>
-      <p class="kpi-value amber">23</p>
-      <p class="kpi-sub">40 items recibidos</p>
-      <p class="kpi-trend negative">↘ -2% este mes</p>
-    </article>
-
-    <article class="kpi-card">
-      <div class="kpi-head">
-        <p class="kpi-label">Business partneres activos</p>
-        <span class="kpi-icon blue">🏢</span>
-      </div>
-      <p class="kpi-value blue">36</p>
-      <p class="kpi-sub">36 total</p>
-      <p class="kpi-trend positive">↗ +5% este mes</p>
-    </article>
+    @for (kpi of kpis; track kpi.label) {
+      <article class="kpi-card">
+        <div class="kpi-head">
+          <p class="kpi-label">{{ kpi.label }}</p>
+          <span [class]="'kpi-icon ' + kpi.color">{{ kpi.icon }}</span>
+        </div>
+        <p [class]="'kpi-value ' + kpi.color">{{ kpi.value }}</p>
+        <p class="kpi-sub">{{ kpi.subtext }}</p>
+        <p [class]="'kpi-trend ' + kpi.trendTone">{{ kpi.trendText }}</p>
+      </article>
+    }
   </section>
 
   <h2 class="subtitle">Acciones para administrador</h2>
   <section class="actions-grid">
-    <article class="action-card">
-      <span class="action-icon green">🏢</span>
-      <div>
-        <p class="action-title">Evaluación de proveedores</p>
-        <p class="action-text">Gestionar y evaluar proveedores del sistema</p>
-      </div>
-      <span class="action-arrow">→</span>
-    </article>
-
-    <article class="action-card">
-      <span class="action-icon red">🛡️</span>
-      <div>
-        <p class="action-title">Panel de administración</p>
-        <p class="action-text">Gestión de usuarios y roles del sistema</p>
-      </div>
-      <span class="action-arrow">→</span>
-    </article>
-
-    <article class="action-card">
-      <span class="action-icon blue">🧾</span>
-      <div>
-        <p class="action-title">Comprobantes</p>
-        <p class="action-text">Gestión de facturas y notas</p>
-      </div>
-      <span class="action-arrow">→</span>
-    </article>
+    @for (action of actions; track action.title) {
+      <article class="action-card">
+        <span [class]="'action-icon ' + action.color">{{ action.icon }}</span>
+        <div>
+          <p class="action-title">{{ action.title }}</p>
+          <p class="action-text">{{ action.description }}</p>
+        </div>
+        <span class="action-arrow">→</span>
+      </article>
+    }
   </section>
 
   <section class="content-grid">
     <article class="panel activity-panel">
       <h3>Actividad reciente de la empresa</h3>
 
-      <div class="activity-item">
-        <span class="activity-icon">🚚</span>
-        <div class="activity-texts">
-          <p class="activity-code">EM 5000000114</p>
-          <p class="activity-detail">
-            Proveedor Demo SAC - Disco de corte metal 7” x 1/8” x 7/8”
-          </p>
+      @for (activity of activities; track activity.code; let isLast = $last) {
+        <div class="activity-item" [class.no-border]="isLast">
+          <span class="activity-icon">{{ activity.icon }}</span>
+          <div class="activity-texts">
+            <p class="activity-code">{{ activity.code }}</p>
+            <p class="activity-detail">{{ activity.detail }}</p>
+          </div>
+          <span [class]="'status-chip ' + activity.statusTone">{{ activity.status }}</span>
         </div>
-        <span class="status-chip success">Recibido</span>
-      </div>
-
-      <div class="activity-item">
-        <span class="activity-icon">🚚</span>
-        <div class="activity-texts">
-          <p class="activity-code">EM 5000000113</p>
-          <p class="activity-detail">
-            Proveedor Demo SAC - Cable de acero 1/2” galvanizado 6x19+FC
-          </p>
-        </div>
-        <span class="status-chip success">Recibido</span>
-      </div>
-
-      <div class="activity-item">
-        <span class="activity-icon">📋</span>
-        <div class="activity-texts">
-          <p class="activity-code">AS 7000000106</p>
-          <p class="activity-detail">
-            Proveedor Demo SAC - Mantenimiento correctivo motor eléctrico 15HP -
-            Rebobinado estator
-          </p>
-        </div>
-        <span class="status-chip warning">Pendiente</span>
-      </div>
-
-      <div class="activity-item no-border">
-        <span class="activity-icon">📋</span>
-        <div class="activity-texts">
-          <p class="activity-code">AS 7000000104</p>
-          <p class="activity-detail">
-            Proveedor Demo SAC - Capacitación en seguridad industrial y
-            prevención de riesgos
-          </p>
-        </div>
-        <span class="status-chip warning">Pendiente</span>
-      </div>
+      }
 
       <button class="reports-btn" type="button">
         📊 Ver Todos los Reportes
@@ -131,35 +52,21 @@
     <article class="panel summary-panel">
       <h3>Resumen operacional</h3>
 
-      <div class="metric-row">
-        <p>Órdenes ejecutadas</p>
-        <strong class="metric-green">34%</strong>
-      </div>
-      <div class="progress-track">
-        <span class="progress-fill green" style="width: 34%"></span>
-      </div>
-
-      <div class="metric-row">
-        <p>Entregas procesadas</p>
-        <strong class="metric-amber">23 docs</strong>
-      </div>
-      <div class="progress-track">
-        <span class="progress-fill amber" style="width: 67%"></span>
-      </div>
-
-      <div class="metric-row">
-        <p>Servicios aprobados</p>
-        <strong class="metric-blue">57%</strong>
-      </div>
-      <div class="progress-track bottom-space">
-        <span class="progress-fill blue" style="width: 57%"></span>
-      </div>
+      @for (metric of summaryMetrics; track metric.label; let isLast = $last) {
+        <div class="metric-row">
+          <p>{{ metric.label }}</p>
+          <strong [class]="'metric-' + metric.valueTone">{{ metric.value }}</strong>
+        </div>
+        <div class="progress-track" [class.bottom-space]="isLast">
+          <span [class]="'progress-fill ' + metric.progressTone" [style.width]="metric.progress"></span>
+        </div>
+      }
 
       <div class="pending-block">
         <p class="pending-title">Acciones pendientes</p>
-        <p class="pending-chip amber">⚠ 21 órdenes abiertas</p>
-        <p class="pending-chip blue">ⓘ 9 servicios pendientes</p>
-        <p class="pending-chip green">🏢 4 proveedores por evaluar</p>
+        @for (pending of pendingActions; track pending.text) {
+          <p [class]="'pending-chip ' + pending.tone">{{ pending.icon }} {{ pending.text }}</p>
+        }
       </div>
     </article>
   </section>
