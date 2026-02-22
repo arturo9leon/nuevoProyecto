@@ -1,7 +1,7 @@
 .topbar {
   min-height: 68px;
   background: linear-gradient(90deg, #67d5ff 0%, #38bdf8 100%);
-  border-bottom: 1px solid #9adfff;
+  border-bottom: 0;
   padding: 10px 24px;
   display: flex;
   align-items: center;
