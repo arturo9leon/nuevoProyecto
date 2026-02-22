@@ -10,7 +10,12 @@
     <p class="section-title">MENÚ</p>
 
     <nav class="menu">
-      <a class="menu-item active" href="#">
+      <a
+        class="menu-item"
+        [class.active]="isActive('/home/dashboard')"
+        href=""
+        (click)="navigate('/home/dashboard'); $event.preventDefault()"
+      >
         <span class="menu-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M4 10.5L12 3L20 10.5V20.5H14.5V14H9.5V20.5H4V10.5Z" />
@@ -19,7 +24,12 @@
         <span>Dashboard</span>
       </a>
 
-      <a class="menu-item" href="#">
+      <a
+        class="menu-item"
+        [class.active]="isActive('/home/evalua')"
+        href=""
+        (click)="navigate('/home/evalua'); $event.preventDefault()"
+      >
         <span class="menu-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M5 4.5H14V19.5H5V4.5Z" />
