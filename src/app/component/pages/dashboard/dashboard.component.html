@@ -1,55 +1,166 @@
 <section class="dashboard-wrap">
-  <h1>Panel de control</h1>
+  <h1 class="title">Panel de control</h1>
 
   <section class="stats-grid">
-    <article class="card">
-      <p class="label">Órdenes de compra</p>
-      <p class="value">35</p>
-      <p class="hint">21 pendientes</p>
+    <article class="kpi-card">
+      <div class="kpi-head">
+        <p class="kpi-label">Órdenes de compra</p>
+        <span class="kpi-icon green">🛒</span>
+      </div>
+      <p class="kpi-value green">35</p>
+      <p class="kpi-sub">21 pendientes</p>
+      <p class="kpi-trend positive">↗ +12% este mes</p>
     </article>
-    <article class="card">
-      <p class="label">Valor contratado</p>
-      <p class="value">S/ 21,770,115.50</p>
-      <p class="hint">Este mes</p>
+
+    <article class="kpi-card">
+      <div class="kpi-head">
+        <p class="kpi-label">Valor contratado</p>
+        <span class="kpi-icon green">↗</span>
+      </div>
+      <p class="kpi-value green">S/ 21,770,115.50</p>
+      <p class="kpi-sub">Este mes</p>
+      <p class="kpi-trend positive">↗ +8% este mes</p>
     </article>
-    <article class="card">
-      <p class="label">Entregas MIGO</p>
-      <p class="value">23</p>
-      <p class="hint">40 items recibidos</p>
+
+    <article class="kpi-card">
+      <div class="kpi-head">
+        <p class="kpi-label">Entregas MIGO</p>
+        <span class="kpi-icon amber">🚚</span>
+      </div>
+      <p class="kpi-value amber">23</p>
+      <p class="kpi-sub">40 items recibidos</p>
+      <p class="kpi-trend negative">↘ -2% este mes</p>
     </article>
-    <article class="card">
-      <p class="label">Business partners activos</p>
-      <p class="value">36</p>
-      <p class="hint">36 total</p>
+
+    <article class="kpi-card">
+      <div class="kpi-head">
+        <p class="kpi-label">Business partneres activos</p>
+        <span class="kpi-icon blue">🏢</span>
+      </div>
+      <p class="kpi-value blue">36</p>
+      <p class="kpi-sub">36 total</p>
+      <p class="kpi-trend positive">↗ +5% este mes</p>
     </article>
   </section>
 
-  <h2>Acciones para administrador</h2>
+  <h2 class="subtitle">Acciones para administrador</h2>
   <section class="actions-grid">
-    <article class="action-card">Evaluación de proveedores</article>
-    <article class="action-card">Panel de administración</article>
-    <article class="action-card">Comprobantes</article>
-  </section>
-
-  <section class="bottom-grid">
-    <article class="box">
-      <h3>Actividad reciente de la empresa</h3>
-      <ul>
-        <li>EM 5000000114 - Disco de corte metal 7" x 1/8" x 7/8"</li>
-        <li>EM 5000000113 - Cable de acero 1/2" galvanizado</li>
-        <li>AS 7000000106 - Mantenimiento correctivo motor eléctrico</li>
-        <li>AS 7000000104 - Capacitación en seguridad industrial</li>
-      </ul>
+    <article class="action-card">
+      <span class="action-icon green">🏢</span>
+      <div>
+        <p class="action-title">Evaluación de proveedores</p>
+        <p class="action-text">Gestionar y evaluar proveedores del sistema</p>
+      </div>
+      <span class="action-arrow">→</span>
     </article>
 
-    <article class="box summary">
+    <article class="action-card">
+      <span class="action-icon red">🛡️</span>
+      <div>
+        <p class="action-title">Panel de administración</p>
+        <p class="action-text">Gestión de usuarios y roles del sistema</p>
+      </div>
+      <span class="action-arrow">→</span>
+    </article>
+
+    <article class="action-card">
+      <span class="action-icon blue">🧾</span>
+      <div>
+        <p class="action-title">Comprobantes</p>
+        <p class="action-text">Gestión de facturas y notas</p>
+      </div>
+      <span class="action-arrow">→</span>
+    </article>
+  </section>
+
+  <section class="content-grid">
+    <article class="panel activity-panel">
+      <h3>Actividad reciente de la empresa</h3>
+
+      <div class="activity-item">
+        <span class="activity-icon">🚚</span>
+        <div class="activity-texts">
+          <p class="activity-code">EM 5000000114</p>
+          <p class="activity-detail">
+            Proveedor Demo SAC - Disco de corte metal 7” x 1/8” x 7/8”
+          </p>
+        </div>
+        <span class="status-chip success">Recibido</span>
+      </div>
+
+      <div class="activity-item">
+        <span class="activity-icon">🚚</span>
+        <div class="activity-texts">
+          <p class="activity-code">EM 5000000113</p>
+          <p class="activity-detail">
+            Proveedor Demo SAC - Cable de acero 1/2” galvanizado 6x19+FC
+          </p>
+        </div>
+        <span class="status-chip success">Recibido</span>
+      </div>
+
+      <div class="activity-item">
+        <span class="activity-icon">📋</span>
+        <div class="activity-texts">
+          <p class="activity-code">AS 7000000106</p>
+          <p class="activity-detail">
+            Proveedor Demo SAC - Mantenimiento correctivo motor eléctrico 15HP -
+            Rebobinado estator
+          </p>
+        </div>
+        <span class="status-chip warning">Pendiente</span>
+      </div>
+
+      <div class="activity-item no-border">
+        <span class="activity-icon">📋</span>
+        <div class="activity-texts">
+          <p class="activity-code">AS 7000000104</p>
+          <p class="activity-detail">
+            Proveedor Demo SAC - Capacitación en seguridad industrial y
+            prevención de riesgos
+          </p>
+        </div>
+        <span class="status-chip warning">Pendiente</span>
+      </div>
+
+      <button class="reports-btn" type="button">
+        📊 Ver Todos los Reportes
+      </button>
+    </article>
+
+    <article class="panel summary-panel">
       <h3>Resumen operacional</h3>
-      <p>Órdenes ejecutadas</p>
-      <div class="bar"><span style="width: 34%"></span></div>
-      <p>Entregas procesadas</p>
-      <div class="bar orange"><span style="width: 67%"></span></div>
-      <p>Servicios aprobados</p>
-      <div class="bar blue"><span style="width: 57%"></span></div>
+
+      <div class="metric-row">
+        <p>Órdenes ejecutadas</p>
+        <strong class="metric-green">34%</strong>
+      </div>
+      <div class="progress-track">
+        <span class="progress-fill green" style="width: 34%"></span>
+      </div>
+
+      <div class="metric-row">
+        <p>Entregas procesadas</p>
+        <strong class="metric-amber">23 docs</strong>
+      </div>
+      <div class="progress-track">
+        <span class="progress-fill amber" style="width: 67%"></span>
+      </div>
+
+      <div class="metric-row">
+        <p>Servicios aprobados</p>
+        <strong class="metric-blue">57%</strong>
+      </div>
+      <div class="progress-track bottom-space">
+        <span class="progress-fill blue" style="width: 57%"></span>
+      </div>
+
+      <div class="pending-block">
+        <p class="pending-title">Acciones pendientes</p>
+        <p class="pending-chip amber">⚠ 21 órdenes abiertas</p>
+        <p class="pending-chip blue">ⓘ 9 servicios pendientes</p>
+        <p class="pending-chip green">🏢 4 proveedores por evaluar</p>
+      </div>
     </article>
   </section>
 </section>
