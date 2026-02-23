@@ -1,7 +1,7 @@
 .sidebar {
   width: 272px;
   min-height: 100vh;
-  background: linear-gradient(180deg, #67d5ff 0%, #38bdf8 100%);
+  background: #294f90;
   color: #e8f7ff;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +11,7 @@
 
 .sidebar-brand {
   min-height: 68px;
-  background: #5fb08a;
+  background: #294f90;
   border-bottom: 0;
   border-right: 1px solid rgba(107, 114, 128, 0.24);
   border-bottom: 1px solid rgba(107, 114, 128, 0.24);
